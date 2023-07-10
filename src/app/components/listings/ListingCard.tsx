@@ -14,7 +14,7 @@ interface ListingCardProps {
   reservation?: SafeReservation;
   onAction?: (id: string) => void;
   disabled?: boolean;
-  actionlabel?: string;
+  actionLabel?: string;
   actionId?: string;
   currentUser?: SafeUser | null;
 }
@@ -22,7 +22,7 @@ interface ListingCardProps {
 const ListingCard: FC<ListingCardProps> = ({
   data,
   actionId = "",
-  actionlabel,
+  actionLabel,
   currentUser,
   disabled,
   onAction,
@@ -92,11 +92,11 @@ const ListingCard: FC<ListingCardProps> = ({
           <div className="font-semibold">$ {price}</div>
           {!reservation && <div className="font-light">night</div>}
         </div>
-        {onAction && actionlabel && (
+        {onAction && actionLabel && (
           <Button
             disabled={disabled}
             small
-            label={actionlabel}
+            label={actionLabel}
             onClick={handleCancel}
           />
         )}
